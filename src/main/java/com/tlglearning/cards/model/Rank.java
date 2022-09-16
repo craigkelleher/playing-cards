@@ -36,5 +36,9 @@ public enum Rank {
     // get same string but lower case.
     return name.charAt(0) + name.substring(1).toLowerCase();
     //return super.toString();
+
+    //however if toString on 10, it will return the same thing. this computation could be once,
+    //storedin a final thing, and then return that. if it is immutable, why not store it,
+    // rather than recompute the same value every time. Same thing wish hashcodes.
   }
 }
