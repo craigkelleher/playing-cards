@@ -2,6 +2,7 @@ package com.tlglearning.cards.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -47,6 +48,11 @@ public class Deck implements Iterable<Card>{
   public void sort() {
     sort(null);
   }
+
+  public void sort(Comparator<Card> comparator) {
+    cards.sort(comparator);
+  }
+
     //override hashcode, to string (should be string representatin of string of cards representing deck),
 
   @Override

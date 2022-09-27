@@ -6,22 +6,24 @@ public enum Suit {
   CLUBS('\u2663', Color.BLACK),
   DIAMONDS('\u2662', Color.RED),
   HEARTS('\u2661', Color.RED),
-  SPADES('\u2660',Color.BLACK );
+  SPADES('\u2660', Color.BLACK);
 
   private final char symbol;
   private final Color color;
+
   // enum constructors must be private, as cannot create more at runtime, so already by default private
   // private Suit(char symbol){} is the same as below
-  Suit(char symbol, Color color){
+  Suit(char symbol, Color color) {
     //  symbol to represent a field in this instance
     this.symbol = symbol;
     this.color = color;
   }
-  public char symbol(){
+
+  public char symbol() {
     return symbol;
   }
 
-  public Color color(){
+  public Color color() {
     return color;
   }
 
@@ -35,8 +37,9 @@ public enum Suit {
     return name.charAt(0) + name.substring(1).toLowerCase();
     //return super.toString();
   }
+
+  public enum Color {
+    BLACK, RED
+  }
 }
 
-public enum Color{
-  BLACK, RED
-}
