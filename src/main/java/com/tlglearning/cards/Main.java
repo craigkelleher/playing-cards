@@ -40,6 +40,4 @@ public class Main {
       return comparison;
     }
   }
-
 }
-
