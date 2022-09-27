@@ -44,7 +44,10 @@ public class Deck implements Iterable<Card>{
     Collections.shuffle(cards);
   }
 
-  //override hashcode, to string (should be string representatin of string of cards representing deck),
+  public void sort() {
+    sort(null);
+  }
+    //override hashcode, to string (should be string representatin of string of cards representing deck),
 
   @Override
   public int hashCode() {
@@ -54,11 +57,11 @@ public class Deck implements Iterable<Card>{
   @Override
   public boolean equals(Object obj) {
     boolean result;
-    if(this == obj){
+    if (this == obj) {
       result = true;
-    }else if(obj instanceof Deck){
+    } else if (obj instanceof Deck) {
       result = cards.equals(((Deck) obj).cards);
-    }else{
+    } else {
       result = false;
     }
     return result;
@@ -68,4 +71,5 @@ public class Deck implements Iterable<Card>{
   public String toString() {
     return cards.toString();
   }
+
 }

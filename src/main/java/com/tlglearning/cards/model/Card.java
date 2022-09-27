@@ -26,7 +26,7 @@ public class Card implements Comparable<Card> {
   @Override
   public int hashCode() {
     //return super.hashCode();
-    // FIXME: Move this to initialization
+    //TODO move to initialization
     return Objects.hash(rank, suit); //Multiplication via specific prime number, then adds up
   }
 
@@ -54,8 +54,13 @@ public class Card implements Comparable<Card> {
   }
 
   @Override
-  public int compareTo(Card o) {
-    return 0; // TODO Replace with comparison based on suit and rank.
+  public int compareTo(Card other) {
+    int comparison = suit.compareTo(other.suit);
+    if (comparison == 0){
+      comparison = rank.compareTo(other.rank);
+    }
+    return comparison; // TODO Replace with comparison based on suit and rank.
+
   }
 }
 

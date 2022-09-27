@@ -3,20 +3,26 @@ package com.tlglearning.cards.model;
 public enum Suit {
   // need () due to our constructor having a req parameter (char symbol)
   // compiler expands these into constructor invocations in the bytecode
-  CLUBS('\u2663'),      // Black club suit
-  DIAMONDS('\u2662'),   // White diamond suit
-  HEARTS('\u2661'),     // White heart suit
-  SPADES('\u2660');     // Black spade suit
+  CLUBS('\u2663', Color.BLACK),
+  DIAMONDS('\u2662', Color.RED),
+  HEARTS('\u2661', Color.RED),
+  SPADES('\u2660',Color.BLACK );
 
   private final char symbol;
+  private final Color color;
   // enum constructors must be private, as cannot create more at runtime, so already by default private
   // private Suit(char symbol){} is the same as below
-  Suit(char symbol){
+  Suit(char symbol, Color color){
     //  symbol to represent a field in this instance
     this.symbol = symbol;
+    this.color = color;
   }
   public char symbol(){
     return symbol;
+  }
+
+  public Color color(){
+    return color;
   }
 
   @Override
@@ -29,6 +35,8 @@ public enum Suit {
     return name.charAt(0) + name.substring(1).toLowerCase();
     //return super.toString();
   }
-  //override a method
+}
 
+public enum Color{
+  BLACK, RED
 }
